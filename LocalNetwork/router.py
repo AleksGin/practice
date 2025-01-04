@@ -25,16 +25,8 @@ class Router:
         for packet in self.buffer:
             destination_server = self.servers.get(packet.server_number)
             if destination_server is None:
-                raise ValueError(f"Сервер с IP: {packet.server_number} не привязан к роутеру")
+                raise ValueError(
+                    f"Сервер с IP: {packet.server_number} не привязан к роутеру"
+                )
             destination_server.buffer.append(packet)
         self.buffer.clear()
-
-
-router = Router()
-server_1 = Server()
-server_2 = Server()
-router.link(server_1)
-router.link(server_2)
-server_1.send_data(Data("Hello from Server 1 to Server 2", server_2.get_ip()))
-server_1.send_data(Data("Hello again from Server 1 to Server 2", server_2.get_ip()))
-router.send_data()
