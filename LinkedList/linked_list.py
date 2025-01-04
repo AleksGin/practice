@@ -35,4 +35,3 @@ class LinkedList:
             data.append(current.get_data())
             current = current.get_next()
         return data
-
