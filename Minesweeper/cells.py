@@ -1,5 +1,5 @@
 class Cell:
-    def __init__(self, mine: bool, fl_open: bool = False, around_mines: int = 0):
+    def __init__(self, mine: bool = False, around_mines: int = 0) -> None:
         self.around_mines = around_mines
         self.mine = mine
-        self.fl_open = fl_open
+        self.fl_open = False
