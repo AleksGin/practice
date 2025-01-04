@@ -1,5 +1,6 @@
-from cells import Cell
 import random
+
+from cells import Cell
 
 
 class GamePole:
